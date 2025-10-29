@@ -20,5 +20,11 @@ and i got following output
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5400926c-9de3-409a-9cc2-a3e1530f908d" />
 
-we can monitor cpu, memory, processes etc by issuing command htop and then pressing f6 and than selecting metric from the list
+
+
+
+we can monitor cpu, memory, processes etc by issuing command htop and then pressing f6 and than selecting metric from the list as given in snapshot below
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/14eabed2-ca86-4e95-ae44-ef904502c260" />
+
 

@@ -10,6 +10,21 @@ Task 1: System Monitoring Setup
 
 Install and configure htop or nmon to monitor CPU, memory, and processes, using df and du for disk usage tracking, and identifying resource-intensive processes. Proper logging of system metrics and clear documentation of the setup are essential. 
 
+Task 2: User Management and Access Control
+
+Evaluation includes creating user accounts for Sarah and Mike with secure passwords, setting up isolated directories with appropriate permissions, and enforcing a password policy with expiration and complexity. Detailed documentation of user management steps is required. 
+
+
+Task 3: Backup Configuration for Web Servers
+
+Configure automated backups for Apache (/etc/httpd/, /var/www/html/) and Nginx (/etc/nginx/, /usr/share/nginx/html/), scheduling cron jobs to run every Tuesday at 12:00 AM, using the correct naming convention for backup files, and verifying backup integrity. Proper documentation and logs are necessary. 
+
+Overall Report and Presentation
+
+
+
+#Task 1 solution:
+
 ##system monitoring using htop
 
 installing htop:

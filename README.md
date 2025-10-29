@@ -30,6 +30,63 @@ we can monitor cpu, memory, processes etc by issuing command htop and then press
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/14eabed2-ca86-4e95-ae44-ef904502c260" />
 
 
+##system monitoring using nmon
+
+installation steps:
+sudo update -y
+sudo install epel-release -y
+sudo install nmon -y
+
+
+after installing htop run command nmon
+and i got following output
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7a735196-76e3-4c6a-badd-eaacd9f7b866" />
+
+as nmon is also interactive process so to get status of memory,cpu and processe following needs to be done:
+
+issue command nmon in terminal than
+1. for cpu : press 'c'  to view cpu status
+2. for memory : press 'm' to view memory status
+3. for processes : press 'u' to view top memory and cpu consuming processes
+
+for cpu follwing output observed:
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3362adaa-4daf-4503-8316-194481d0e7f0" />
+
+for memory following output observed:
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a9922aa1-7b18-46a9-87ca-2f66437caf26" />
+
+
+for top processes follwing output observed:
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/84004421-3a37-4862-8c07-2a3e25d706e3" />
+
+
+##Disk Usage Monitoring :
+follwing command is used for disk usage monitoring
+df -h 
+
+output
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5803f9ee-4de5-4b67-a4ca-8ef2aeadb773" />
+
+
+to make a log file
+df -h > /var/log/disk_usage.log
+
+output of a log file:
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/536691fe-4a98-40ba-bdf9-034aef734fe2" />
+
+To automate daily at 8 am in morning:
+echo "0 8 * * * df -h > /var/log/disk_usage.log" | sudo tee -a /etc/crontab
+
+
+
+
+
+
 
 
 

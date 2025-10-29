@@ -148,6 +148,64 @@ output of above script file generated in /var/log as system_monitor_current_date
 
 
 
+Task 2 solution:
+
+Step 1: Create User Accounts
+# Create users with home directories
+sudo useradd -m -d /home/Sarah -s /bin/bash Sarah
+sudo useradd -m -d /home/mike -s /bin/bash mike
+
+# Set passwords for each user (you will be prompted to enter them)
+sudo passwd Sarah
+sudo passwd mike
+
+snapshot :
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/db88a2f4-a4ee-4e6d-9d41-15658123b91e" />
+
+
+
+Step 2: Create Isolated Working Directories
+
+# Create dedicated workspace directories
+sudo mkdir -p /home/Sarah/workspace
+sudo mkdir -p /home/mike/workspace
+
+# Set ownership and permissions
+sudo chown Sarah:Sarah /home/Sarah/workspace
+sudo chown mike:mike /home/mike/workspace
+
+# Restrict access so only the owner can access their workspace
+sudo chmod 700 /home/Sarah/workspace
+sudo chmod 700 /home/mike/workspace
+
+output:
+/home/Sarah/workspace → accessible only by Sarah
+/home/mike/workspace → accessible only by Mike
+
+screenshot:
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c5cb8171-606b-4dfd-937f-0cf9bdccebee" />
+
+
+
+
+Step 3: Configure Password Policy:
+sudo vi /etc/login.defs
+
+PASS_MAX_DAYS   30    # Password expires every 30 days
+PASS_MIN_DAYS   1     # Minimum 1 day before password can be changed
+PASS_WARN_AGE   7     # Warn user 7 days before password expires
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8a29e9c5-1606-4c35-a713-061d2dd7a38a" />
+
+
+
+
+
+
+
+
+
 
 
 

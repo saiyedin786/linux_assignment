@@ -79,8 +79,59 @@ output of a log file:
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/536691fe-4a98-40ba-bdf9-034aef734fe2" />
 
+
+
+
 To automate daily at 8 am in morning:
 echo "0 8 * * * df -h > /var/log/disk_usage.log" | sudo tee -a /etc/crontab
+
+
+Identifying Resource-Intensive Processes and logging to log file
+
+ps -eo pid,comm,%cpu,%mem --sort=-%cpu | head -n 10 > /var/log/top_processes.log
+
+output of a log file:
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a640d3f2-ab60-4471-aaf8-0ec7c823becb" />
+
+to automate on a hourly basis:
+
+echo "0 * * * * ps -eo pid,comm,%cpu,%mem --sort=-%cpu | head -n 10 > /var/log/top_processes.log" | sudo tee -a /etc/crontab
+
+
+making a script for monitoring purpose:
+Create a script /usr/local/bin/system_monitor.sh:
+
+#!/bin/bash
+LOG_FILE="/var/log/system_monitor_$(date +%F).log"
+
+echo "===== System Report $(date) =====" >> $LOG_FILE
+echo "--- CPU/Memory Usage ---" >> $LOG_FILE
+top -b -n1 | head -n 10 >> $LOG_FILE
+
+echo "--- Disk Usage ---" >> $LOG_FILE
+df -h >> $LOG_FILE
+
+echo "--- Top Processes ---" >> $LOG_FILE
+ps -eo pid,comm,%cpu,%mem --sort=-%cpu | head -n 10 >> $LOG_FILE
+
+echo "===================================" >> $LOG_FILE
+
+
+changing permission of above script file:
+sudo chmod +x /usr/local/bin/system_monitor.sh
+
+running it hourly basis:
+echo "0 * * * * root /usr/local/bin/system_monitor.sh" | sudo tee -a /etc/crontab
+
+
+output of above script file generated in /var/log as system_monitor_current_date.log file
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a51a894e-91e6-444c-bc47-c4961f5a5205" />
+
+
+
+
 
 
 

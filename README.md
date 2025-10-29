@@ -11,6 +11,7 @@ Task 1: System Monitoring Setup
 Install and configure htop or nmon to monitor CPU, memory, and processes, using df and du for disk usage tracking, and identifying resource-intensive processes. Proper logging of system metrics and clear documentation of the setup are essential. 
 
 ##system monitoring using htop
+
 installing htop:
 sudo update -y
 sudo install epel-release -y

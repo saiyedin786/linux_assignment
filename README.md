@@ -199,6 +199,19 @@ PASS_WARN_AGE   7     # Warn user 7 days before password expires
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8a29e9c5-1606-4c35-a713-061d2dd7a38a" />
 
 
+Task 3 solution:
+
+step-1 : created apache_backup.sh in /usr/local/bin directory
+
+step-2 : vi apache_backup.sh written code for taking backup of /etc/httpd and /var/www/html
+and modified the permission using command- sudo chmod +x /usr/local/bin/apache_backup.sh 
+the screenshot of apache_backup.sh file is given below
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a8634316-47b0-4251-8abf-2069e9687e88" />
+
+
+
+
+
 
 
 

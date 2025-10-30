@@ -218,7 +218,36 @@ the screenshot of apache_backup.sh file is given below
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1ca7fc24-af38-49d8-8f07-6b3df1c5d232" />
 
 step-3 : after successfull run of both the scripts this is the output screenshot of /backups directory
-command to verify is  - ls -l
+command to verify is  - ls -lh
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/72f50181-b6fa-4029-9e94-399797eebe86" />
+
+step-4: scheduling task to run at every Tuesday at 12:00 AM
+for sarah's task of backing up apache server configuration:
+command crontab -e
+and then write 
+0 0 * * 2 /usr/local/bin/apache_backup.sh
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1d12c08d-15c8-4d1e-b478-0f69f35f1c86" />
+
+for mike task of backing up nginx server configuration:
+command crontab -e
+and then write 
+0 0 * * 2 /usr/local/bin/nginx_backup.sh
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/41088d82-4731-483b-8c7a-705f18ca3afc" />
+
+then verified cronttab tasks with command
+crontab -l
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d7f7199d-24af-4886-a380-52831d1eacbd" />
+
+
+All task successfully executed in my environment Thanks....................
+
+
+
+
+
 
 
 

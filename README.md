@@ -200,13 +200,26 @@ PASS_WARN_AGE   7     # Warn user 7 days before password expires
 
 
 Task 3 solution:
-
+Script for Sarah (Apache)
 step-1 : created apache_backup.sh in /usr/local/bin directory
 
 step-2 : vi apache_backup.sh written code for taking backup of /etc/httpd and /var/www/html
 and modified the permission using command- sudo chmod +x /usr/local/bin/apache_backup.sh 
 the screenshot of apache_backup.sh file is given below
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a8634316-47b0-4251-8abf-2069e9687e88" />
+
+Script for Mike (Nginx)
+
+step-1 : created nginx_backup.sh in /usr/local/bin directory
+
+step-2 : vi nginx_backup.sh written code for taking backup of /etc/nginx /usr/share/nginx/html
+and modified the permission using command- sudo chmod +x /usr/local/bin/nginx_backup.sh 
+the screenshot of apache_backup.sh file is given below
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1ca7fc24-af38-49d8-8f07-6b3df1c5d232" />
+
+step-3 : after successfull run of both the scripts this is the output screenshot of /backups directory
+command to verify is  - ls -l
+
 
 
 
